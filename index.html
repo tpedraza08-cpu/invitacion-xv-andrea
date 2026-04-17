@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XV Años - Andrea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d4af37; /* Dorado */
+            --secondary-color: #f8bbd0; /* Rosa pastel */
+            --text-color: #4a4a4a;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff5f7;
+            overflow-x: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('background.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .names {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .details {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: var(--text-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #b8962e;
+            transform: scale(1.05);
+        }
+
+        .animation-element {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            h1 { font-size: 3rem; }
+            .container { margin-top: 20px; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="container">
+        <div class="animation-element">✨</div>
+        <h2>Mis XV Años</h2>
+        <h1>Andrea</h1>
+        
+        <div class="section">
+            <p class="section-title">Con la bendición de mis padres:</p>
+            <p class="names">Andrés Lorenzo Martínez<br>y<br>Blanca Esther Cruz Saldaña</p>
+        </div>
+
+        <div class="section">
+            <p class="section-title">Y mis padrinos:</p>
+            <p class="names">Andrés Lorenzo Pineda<br>y<br>María de Jesús Martínez Bahena</p>
+        </div>
+
+        <div class="section">
+            <p class="section-title">Te espero el día:</p>
+            <p class="details"><strong>9 de Mayo de 2026</strong></p>
+        </div>
+
+        <div class="section">
+            <p class="section-title">Ceremonia Religiosa</p>
+            <p class="details">14:00 hrs.</p>
+            <a href="https://maps.app.goo.gl/TUSVw1m69A6QZzYT6" target="_blank" class="btn">Ver Ubicación de la Misa</a>
+        </div>
+
+        <div class="section">
+            <p class="section-title">Recepción</p>
+            <p class="details">Después de la misa</p>
+            <a href="https://maps.app.goo.gl/Qhb5YZFv1Nap9Fro8" target="_blank" class="btn">Ver Ubicación del Festejo</a>
+        </div>
+
+        <div class="animation-element">🌸</div>
+        
+        <div class="footer">
+            ¡No faltes, será un día inolvidable!
+        </div>
+    </div>
+
+    <script>
+        // Animación simple al hacer scroll o cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Invitación cargada correctamente');
+        });
+    </script>
+</body>
+</html>
