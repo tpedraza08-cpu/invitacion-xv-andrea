@@ -131,13 +131,26 @@
             h1 { font-size: 3rem; }
             .container { margin-top: 20px; padding: 20px; }
         }
+         #contador {
+        font-weight: 600;
+        color: #e53935;
+        font-size: 1.3rem;
+    }
     </style>
 </head>
 <body>
-    <div class="background"></div>
+        <div class="background"></div>
     
     <div class="container">
         <div class="animation-element">✨</div>
+        <audio id="musica" autoplay loop>
+          <source src="musica.mp3" type="audio/mpeg">
+        </audio>
+
+        <button onclick="document.getElementById('musica').play()" class="btn">
+          ▶️ Reproducir música
+        </button>
+
         <h2>Mis XV Años</h2>
         <h1>Andrea</h1>
         
@@ -154,6 +167,7 @@
         <div class="section">
             <p class="section-title">Te espero el día:</p>
             <p class="details"><strong>9 de Mayo de 2026</strong></p>
+	    <p id="contador" class="details"></p>
         </div>
 
         <div class="section">
@@ -181,5 +195,26 @@
             console.log('Invitación cargada correctamente');
         });
     </script>
+    <script>
+const fechaEvento = new Date("May 9, 2026 14:00:00").getTime();
+
+const contador = document.getElementById("contador");
+
+setInterval(() => {
+    const ahora = new Date().getTime();
+    const diferencia = fechaEvento - ahora;
+
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+    contador.innerHTML = `Faltan ${dias} días, ${horas} horas, ${minutos} min y ${segundos} seg`;
+
+    if (diferencia < 0) {
+        contador.innerHTML = "¡Hoy es el gran día! 🎉";
+    }
+}, 1000);
+</script>
 </body>
 </html>
