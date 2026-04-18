@@ -136,6 +136,41 @@
         color: #e53935;
         font-size: 1.3rem;
     }
+    
+    .contador-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.tiempo {
+    
+    background: linear-gradient(145deg, #fff, #f8f8f8);
+    border: 1px solid rgba(212,175,55,0.3);    
+
+
+    padding: 10px 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-width: 70px;
+}
+
+.tiempo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #d4af37;
+    display: block;
+}
+
+.tiempo p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -167,7 +202,26 @@
         <div class="section">
             <p class="section-title">Te espero el día:</p>
             <p class="details"><strong>9 de Mayo de 2026</strong></p>
-	    <p id="contador" class="details"></p>
+	    
+            <div class="contador-box">
+    <div class="tiempo">
+        <span id="dias">00</span>
+        <p>Días</p>
+    </div>
+    <div class="tiempo">
+        <span id="horas">00</span>
+        <p>Horas</p>
+    </div>
+    <div class="tiempo">
+        <span id="minutos">00</span>
+        <p>Min</p>
+    </div>
+    <div class="tiempo">
+        <span id="segundos">00</span>
+        <p>Seg</p>
+    </div>
+</div>
+
         </div>
 
         <div class="section">
@@ -198,8 +252,6 @@
     <script>
 const fechaEvento = new Date("May 9, 2026 14:00:00").getTime();
 
-const contador = document.getElementById("contador");
-
 setInterval(() => {
     const ahora = new Date().getTime();
     const diferencia = fechaEvento - ahora;
@@ -209,12 +261,17 @@ setInterval(() => {
     const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
     const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-    contador.innerHTML = `Faltan ${dias} días, ${horas} horas, ${minutos} min y ${segundos} seg`;
+    document.getElementById("dias").innerText = dias;
+    document.getElementById("horas").innerText = horas;
+    document.getElementById("minutos").innerText = minutos;
+    document.getElementById("segundos").innerText = segundos;
 
     if (diferencia < 0) {
-        contador.innerHTML = "¡Hoy es el gran día! 🎉";
+        document.querySelector(".contador-box").innerHTML = "¡Hoy es el gran día! 🎉";
     }
 }, 1000);
 </script>
+    
+
 </body>
 </html>
